@@ -32,9 +32,13 @@ bh = buy_and_hold(df.copy(), INITIAL_CAPITAL)
 
 # Print results
 print("\nStrategy Performance:")
-for k, v in perf.items():
-    print(k, round(v * 100 if "Drawdown" not in k else v * 100, 2))
+print("CAGR (%):", round(perf["CAGR"] * 100, 2))
+print("Max Drawdown (%):", round(perf["Max_Drawdown"] * 100, 2))
+print("Volatility (%):", round(perf["Volatility"] * 100, 2))
+print("Sharpe:", round(perf["Sharpe"], 3))
 
 print("\nBuy & Hold Performance:")
-for k, v in bh.items():
-    print(k, round(v * 100 if "Drawdown" not in k else v * 100, 2))
+print("CAGR (%):", round(bh["CAGR"] * 100, 2))
+print("Max Drawdown (%):", round(bh["Max_Drawdown"] * 100, 2))
+print("Volatility (%):", round(bh["Volatility"] * 100, 2))
+print("Sharpe:", round(bh["Sharpe"], 3))
